@@ -1,0 +1,301 @@
+/* utility */
+.ir {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+/* background */
+#app {
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-size: 386px;
+    background-position: top center;
+    padding: 247px 0 171px;
+    background-color: #EAE8FE;
+    font-family: 'Noto Sans KR', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0 28px;
+}
+/* css start */
+
+/* vending-machine */
+.vending-machine {
+    padding: 31px 27px 28px;
+    width: 360px;
+    height: 545px;
+    background-color: #fff;
+    box-sizing: border-box;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+/* 음료 카드 */
+.vending-machine .list-item::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+.vending-machine .list-item li {
+    float: left;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.vending-machine .list-item li:active:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #6327FE;
+    border-radius: 13px;
+}
+.vending-machine .list-item li:nth-child(3n) {
+    margin-right: 0;
+}
+.vending-machine .list-item li.soldout::before {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: 10px;
+    background: no-repeat center / 58px 45px url(../img/Sold-out.png) rgba(0, 0, 0, 0.8);
+}
+.vending-machine .list-item li.soldout {
+    pointer-events: none;
+}
+
+.vending-machine .btn-item {
+    width: 94px;
+    height: 130px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+    padding-bottom: 9px;
+    box-sizing: border-box;
+}
+.btn-item .img-item {
+    width: 36px;
+    height: 65px;
+}
+.btn-item .tit-item {
+    font-family: Noto Sans KR;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 13px;
+    letter-spacing: 0em;
+    text-align: center;
+    display: block;
+    margin-bottom: 7px;
+}
+.btn-item .txt-item {
+    background-color: #6327FE;
+    border-radius: 50px;
+    width: 70px;
+    height: 22px;
+    box-sizing: border-box;
+    /* margin-bottom: 9px; */
+    padding: 5px 15px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #fff;    
+}
+
+/* 잔액 거스름돈반환 표시 */
+.cont-return {
+    font-size: 14px;
+    margin-bottom: 11px;
+}
+.cont-return::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+.cont-return .info-balance {
+    width: 200px;
+    height: 33px;
+    background-color: #EAE8FE;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 6px 10px;
+    line-height: 20px;
+    float: left;
+}
+.cont-return .txt-balance {
+    float: right;
+}
+.cont-return .btn-return {
+    padding: 6px 9px 8px 10px;
+    font-family: Noto Sans KR;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+    border-radius: 5px;
+    float: right;
+}
+
+/* 입금관련 표시 */
+.cont-put {
+    margin-bottom: 11px;
+}
+.cont-put::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+.cont-put .inp-put {
+    font-size: 13px;
+    line-height: 18px;
+    color: #bdbdbd;
+    border-radius: 5px;
+    border: 1px solid #BDBDBD;
+    width: 190px;
+    height: 32px;
+    padding-left: 6px;
+    float: left;
+}
+.cont-put .btn-put {
+    padding: 6px 35px 6px;
+    width: 94px;
+    height: 32px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+    border-radius: 5px;
+    font-size: 13px;
+    line-height: 18px;
+    float: right;
+}
+
+/* 선택한음료 정보화면 */
+.cont-get {
+    display: flex;
+}
+.list-item-staged {
+    background-color: #EAE8FE;
+    width: 200px;
+    height: 106px;
+    margin-right: 12px;
+    padding: 12px 10px 12px 12px;
+    overflow-y: scroll;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 1px solid #BDBDBD;
+}
+.item-staged {
+    width: 100%;
+    height: 46px;
+    background-color: #fff;
+    padding: 8px 8px 8px 10px;
+    box-sizing: border-box;
+    margin-bottom: 6px;
+    border-radius: 5px;
+}
+.item-staged:last-child {
+    margin-bottom: 0;
+}
+.img-item {
+    width: 18px;
+    height: 33px;
+}
+.txt-item {
+    font-size: 9px;
+    line-height: 13px;
+    color: #333333;
+}
+.num-counter {
+    float: right;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-get .btn-get {
+    width: 94px;
+    height: 106px;
+    background-color: #6327FE;
+    border-radius: 5px;
+    color: #fff;
+}
+
+/* 나의 정보화면 */
+.my-info {
+    width: 360px;
+}
+/* 소지금 */
+.cont-mymoney {
+    padding: 9px 27px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+.cont-mymoney .info-mymoney {
+    font-size: 14px;
+    line-height: 20px;
+    background-color: #EAE8FE;
+    border-radius: 5px;
+    width: 306px;
+    height: 32px;
+    padding: 6px 10px;
+    box-sizing: border-box;
+}
+.cont-mymoney .txt-mymoney {
+    font-weight: 700;
+    line-height: 20px;
+    float: right;
+}
+
+/* 선택한음료 */
+.cont-myitems {
+    box-sizing: border-box;
+    width: 360px;
+    height: 474px;
+    background-color: #FFF;
+    padding: 25px 27px 52px;
+}
+.cont-myitems .tit-myitems {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    margin-bottom: 13px;
+}
+.cont-myitems .list-item-staged {
+    width: 100%;
+    height: 364px;
+    margin-bottom: 6px;
+}
+.cont-myitems .txt-total {
+    display: block;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: right;
+}
+
+@media screen and (max-width: 360px) {
+    #app {
+        background-color: #FFF;
+        padding: 96px 0 43px;
+        background-size: 166px;
+    }
+}
