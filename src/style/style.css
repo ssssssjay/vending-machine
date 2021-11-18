@@ -31,12 +31,9 @@
     height: 545px;
     background-color: #fff;
     box-sizing: border-box;
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
 }
 
-/* 음료 카드 */
+/* 자판기 음료 부분 */
 .vending-machine .list-item::after {
     display: block;
     content: '';
@@ -62,6 +59,7 @@
 .vending-machine .list-item li:nth-child(3n) {
     margin-right: 0;
 }
+/* 매진된 음료 구현 */
 .vending-machine .list-item li.soldout::before {
     display: block;
     position: absolute;
@@ -85,31 +83,26 @@
     border-radius: 10px;
     background-color: #fff;
     text-align: center;
-    padding-bottom: 9px;
-    box-sizing: border-box;
+    padding: 11px 0 9px;
 }
 .btn-item .img-item {
     width: 36px;
     height: 65px;
+    margin-bottom: 6px;
 }
 .btn-item .tit-item {
-    font-family: Noto Sans KR;
     font-size: 9px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 13px;
-    letter-spacing: 0em;
-    text-align: center;
+    line-height: 10px;
     display: block;
     margin-bottom: 7px;
 }
 .btn-item .txt-item {
+    display: inline-block;
     background-color: #6327FE;
     border-radius: 50px;
     width: 70px;
     height: 22px;
     box-sizing: border-box;
-    /* margin-bottom: 9px; */
     padding: 5px 15px;
     font-size: 12px;
     line-height: 12px;
@@ -141,13 +134,8 @@
 }
 .cont-return .btn-return {
     padding: 6px 9px 8px 10px;
-    font-family: Noto Sans KR;
     font-size: 13px;
-    font-style: normal;
-    font-weight: 500;
     line-height: 18px;
-    letter-spacing: 0em;
-    text-align: center;
     box-shadow: 0 0 4px rgba(0, 0, 0, .3);
     border-radius: 5px;
     float: right;
